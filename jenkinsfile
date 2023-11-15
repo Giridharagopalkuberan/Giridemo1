@@ -10,7 +10,7 @@ pipeline {
             }
         }
         
-        stage ('Build & JUnit Test') {
+        stage ('JUnit Test') {
             steps {
                 sh 'mvn install' 
             }
@@ -20,15 +20,6 @@ pipeline {
                 }   
             }
         }
-        // stage('SonarQube Analysis'){
-        //     steps{
-        //            withSonarQubeEnv('sonarqube') {
-        //                 sh 'mvn clean verify sonar:sonar \
-        //                 -Dsonar.projectKey=devsecopsproject-key \
-        //                 -Dsonar.host.url=http://localhost:9000 \
-        //                 -Dsonar.login=sqp_ed9e2f97b294d7c31daeb4b2e7985d4b9f9ab460'
-        //             }
-        //         }
-        // }
+
         }
-    }  
+}  
